@@ -4,7 +4,6 @@ import { verifyToken } from '../middleware/authMiddleware.js'
 
 const router = express.Router()
 
-//Get items for the logged-in user
 router.get('/', verifyToken, async (req, res) => {
   try {
   const [items] = await db.execute('SELECT * FROM items WHERE user_id = ?', [req.user.id])
