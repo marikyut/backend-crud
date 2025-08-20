@@ -1,10 +1,9 @@
 import express from "express"
-import { registerUser, loginUser } from "../controllers/authController.js";
+import { loginUser } from "../controllers/authController.js";
 import { verifyToken } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/signup", registerUser);
 router.post("/login", loginUser);
 
 //Protected route
